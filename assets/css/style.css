@@ -1,0 +1,199 @@
+.head{
+    grid-area: head;
+    display: flex;
+    justify-content: center;
+    background: rgb(47,35,75);
+    background: linear-gradient(176deg, rgba(47,35,75,1) 12%, rgba(224,203,220,1) 85%);
+}
+h1{
+    color: #fff7fa;
+
+}
+.main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    gap: 5px;
+}
+.newTasks {
+    position: relative;
+    margin-top: 60px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .newTasks label {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    transform-origin: 0% 0%;
+    pointer-events: none;
+    top: 4px;
+    left: 4px;
+    height: 52px;
+    width: 110px;
+    border-radius: 27px;
+    background: #2f234b;
+    color: #fff7fa;
+    transition: 0.3s;
+  }
+
+  .newTasks input {
+    width: 250px;
+    height: 60px;
+    border-radius: 30px;
+    background: #fff7fa;
+    border: 0;
+    padding-left: 126px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #2f234b;
+    outline: none;
+    transition: 0.3s;
+    border: 1px solid #2f234b;
+  }
+
+  .newTasks input::placeholder {
+    color: rgb(255 255 255 / 50%);
+  }
+
+  .newTasks :is(input:focus, input:valid) {
+    padding-left: 20px;
+  }
+
+  .newTasks :is(input:focus, input:valid) ~ label {
+    translate: 0 -55px;
+    scale: 0.700;
+  }
+
+.tareas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 360px;
+
+}
+.tarea{
+    display: flex;
+    background: #e0cbdc;
+    margin-bottom: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    color: #2f234b;
+    font-size: large;
+    font-weight: bold;
+}
+.idTask{
+    display: flex;
+    gap: 10px;
+}
+.idTask > #bodyTask{
+    width: 200px;
+    overflow-wrap: anywhere;
+    text-align:justify;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+  position: relative;
+  top: 30%;
+  text-align: center;
+  font-size:larger;
+  color: #2f234b;
+  background-color: #e0cbdc;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+}
+#deleteTask, #cancel{
+  background: #2f234b;
+  color: #e0cbdc;
+  border-radius: inherit;
+  padding: 2%;
+  width: 40%;
+}
+.taskBar{
+    grid-area: taskBar;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background:#e0cbde;
+    color: #2f234b;
+    font-weight: bold;
+}
+.fa-plus{
+    color: #2f234b;
+}
+.fa-circle{
+    color: #e0cbde;
+    border: 2px solid #fff7fa;
+    border-radius: 50%;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    'head'
+    'main'
+    'taskBar';
+    height: 100vh;
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
