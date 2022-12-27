@@ -15,12 +15,14 @@ const addTask = () => {
         status : true //TRUE = TAREA PENDIENTE;FALSE = TAREA REALIZADA
     }
     let task = document.querySelector('#newTask').value;
-    document.querySelector('#newTask').value = "";
-    (tasks.length === 0)? taskObj.id = 1 : taskObj.id = tasks.length + 1;
-    taskObj.task = task;
-    tasks.push(taskObj);
-    localStorageSave();
-    printTasks();
+    if (task != ""){
+        document.querySelector('#newTask').value = "";
+        (tasks.length === 0)? taskObj.id = 1 : taskObj.id = tasks.length + 1;
+        taskObj.task = task;
+        tasks.push(taskObj);
+        localStorageSave();
+        printTasks();
+    }
 }
 
 const printTasks = () => {

@@ -26,6 +26,9 @@ h1{
     align-items: center;
     gap: 5px;
   }
+  .newTasks > img{
+    display: none;
+  }
 
   .newTasks label {
     position: absolute;
@@ -156,8 +159,34 @@ h1{
     'main'
     'taskBar';
     height: 100vh;
-    /* flex-direction: column; */
-    /* align-items: center; */
+}
+@media(min-width:769px){
+  .main{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    overflow:scroll;
+  }
+  .newTasks {
+    position: sticky;
+    top: 60px;
+  }
+  .newTasks input {
+    width: 400px;
+  }
+  .tareas{
+    width: 450px;
+    margin-top: 10px;
+  }
+  .idTask > #bodyTask{
+    width: 300px;
+  }
+  .newTasks > img{
+    display: flex;
+    width: 400px;
+    height: auto;
+    margin-top: 30px;
+  }
 }
 
 
