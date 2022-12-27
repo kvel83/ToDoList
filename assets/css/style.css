@@ -187,6 +187,10 @@ h1{
     height: auto;
     margin-top: 30px;
   }
+  .modal-content {
+    top: 0;
+  }
+
 }
 
 

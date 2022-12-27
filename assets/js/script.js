@@ -17,7 +17,7 @@ const addTask = () => {
     let task = document.querySelector('#newTask').value;
     if (task != ""){
         document.querySelector('#newTask').value = "";
-        (tasks.length === 0)? taskObj.id = 1 : taskObj.id = tasks.length + 1;
+        (tasks.length === 0)? taskObj.id = 1 : taskObj.id = tasks[tasks.length - 1].id + 1;
         taskObj.task = task;
         tasks.push(taskObj);
         localStorageSave();
@@ -61,26 +61,19 @@ const paintDone = () => {
         }}
     )
 }
-const deleteTask = (taskId) => {
-    const index = tasks.findIndex(task => task.id === taskId);
-    const modal = document.querySelector('#myModal')
+const deleteTask = (delTask) => {
+    const modal = document.querySelector('#myModal');
     modal.style.display = 'block';
-    modal.querySelector('#cancel').addEventListener('click',event => (modal.style.display = 'none'));
-    console.log(tasks);
-    modal.querySelector('#deleteTask').addEventListener('click',() => {
-        console.log(tasks);
+    modal.querySelector('#cancel').addEventListener('click', (event) => modal.style.display = 'none');
+    modal.querySelector('#deleteTask').addEventListener('click', (event) => {
+        const index = tasks.findIndex((task) => task.id === delTask);
+        if (index === -1) return;
         tasks.splice(index,1);
-        console.log(tasks);
         localStorageSave();
+        printTasks();
         modal.style.display = 'none';
     });
-    printTasks();
 }
-// const updateArray = (taskId) => {
-    // tasks.splice(taskId,1);
-    // localStorageSave();
-    // document.querySelector('#myModal').style.display = 'none';
-// }
 const doneTask = (taskId) =>{
     const index = tasks.findIndex(task => task.id === taskId);
     tasks[index].status = false;
