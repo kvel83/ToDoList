@@ -18,6 +18,7 @@ h1{
     align-items: center;
     overflow: scroll;
     gap: 5px;
+    position: sticky;
 }
 .newTasks {
     position: relative;
