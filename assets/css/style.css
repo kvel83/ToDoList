@@ -4,6 +4,7 @@
     justify-content: center;
     background: rgb(47,35,75);
     background: linear-gradient(176deg, rgba(47,35,75,1) 12%, rgba(224,203,220,1) 85%);
+    position: sticky;
 }
 h1{
     color: #fff7fa;
@@ -140,6 +141,7 @@ h1{
     background:#e0cbde;
     color: #2f234b;
     font-weight: bold;
+    position: sticky;
 }
 .fa-plus{
     color: #2f234b;
