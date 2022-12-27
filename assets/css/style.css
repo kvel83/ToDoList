@@ -1,3 +1,6 @@
+body{
+    height: 100vh;
+}
 .head{
     grid-area: head;
     display: flex;
